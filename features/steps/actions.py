@@ -1,4 +1,6 @@
 from behave import *
+from selenium import webdriver
+import time
 
 use_step_matcher("parse")
 
@@ -16,7 +18,8 @@ def step_impl(context, url):
     """
     :type context: behave.runner.Context
     """
-    pass
+    context.driver = webdriver.Chrome()
+    context.driver.get(url)
 
 
 @then("Проверили, что появилось поле поиска")
