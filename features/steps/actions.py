@@ -48,7 +48,8 @@ def step_impl(context, title):
 
 @then('Нажали на ссылку "{link_text}"')
 def step_impl(context, link_text):
-    element = context.driver.find_element_by_xpath("//a[contains(text(), '{}')]".format(link_text))
+    element = context.driver.find_element_by_xpath("//a[contains(text(),"
+                                                   " '{}')]".format(link_text))
     element.click()
 
 
